@@ -1,0 +1,11 @@
+Simple utility "script" that starts an ec2 instance, greps the public DNS name and updates a CNAME subdomain in a route53 zone to point to that dns name.
+Can also stop the instance.
+It is an alternative to an elastic IP address which is permanently assigned to an instance.
+
+The instance itself must be marked with a tag which is configured in the applications.conf (as also the credentials, the hosted zone id and the subdomain)
+
+I use this script to start my preconfigued VPN instance and update the vpn record of my domain to point to it.
+It is quickly thrown together and misses on error checking and recovery.
+
+It is started with: sbt "run start" 
+soptted with: sbt "run stop"
